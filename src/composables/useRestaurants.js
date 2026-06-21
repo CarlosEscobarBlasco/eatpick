@@ -1,7 +1,7 @@
 import { ref } from 'vue'
 import { supabase } from '../lib/supabase'
 
-const PAGE_SIZE = 20
+const PAGE_SIZE = 10
 
 const cache = {
   list: null,

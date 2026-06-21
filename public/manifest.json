@@ -2,7 +2,7 @@
   "name": "EatPick — Encuentra tu restaurante",
   "short_name": "EatPick",
   "description": "Registra y descubre restaurantes con facilidad",
-  "start_url": "/login",
+  "start_url": "/app",
   "display": "standalone",
   "background_color": "#FEFAF5",
   "theme_color": "#FF5A5F",

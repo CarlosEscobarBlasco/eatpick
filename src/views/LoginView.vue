@@ -43,7 +43,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { supabase } from '../lib/supabase'
 
@@ -52,6 +52,13 @@ const email = ref('')
 const password = ref('')
 const loading = ref(false)
 const error = ref('')
+
+onMounted(async () => {
+  const { data: { session } } = await supabase.auth.getSession()
+  if (session) {
+    router.replace({ name: 'Main' })
+  }
+})
 
 async function handleLogin() {
   loading.value = true
