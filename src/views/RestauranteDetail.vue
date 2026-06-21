@@ -58,18 +58,19 @@
       </template>
     </div>
 
-    <AddRestaurantModal ref="editModal" @save="handleEditSave" />
+    <AddRestaurantModal ref="editModal" @save="handleEditSave" @delete="handleDelete" />
   </div>
 </template>
 
 <script setup>
 import { ref, onMounted } from 'vue'
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 import { useRestaurants } from '../composables/useRestaurants'
 import AddRestaurantModal from '../components/AddRestaurantModal.vue'
 
 const route = useRoute()
-const { getRestaurantById, updateRestaurant, invalidateCache } = useRestaurants()
+const router = useRouter()
+const { getRestaurantById, updateRestaurant, deleteRestaurant, invalidateCache } = useRestaurants()
 
 const restaurant = ref(null)
 const loading = ref(true)
@@ -101,6 +102,17 @@ async function handleEditSave({ id, data, close, setSaving, setError }) {
     setError(e.message || 'Error al guardar')
   }
   setSaving(false)
+}
+
+async function handleDelete({ id, close }) {
+  try {
+    await deleteRestaurant(id)
+    invalidateCache()
+    close()
+    router.back()
+  } catch (e) {
+    console.error(e)
+  }
 }
 
 onMounted(async () => {

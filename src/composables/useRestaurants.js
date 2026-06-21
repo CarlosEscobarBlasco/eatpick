@@ -169,6 +169,13 @@ export function useRestaurants() {
     return result
   }
 
+  async function deleteRestaurant(id) {
+    await supabase.from('restaurant_tags').delete().eq('restaurant_id', id)
+    await supabase.from('restaurants').delete().eq('id', id)
+    cache.list = null
+    cache.detail.delete(id)
+  }
+
   function invalidateCache() {
     cache.list = null
     cache.detail.clear()
@@ -184,6 +191,7 @@ export function useRestaurants() {
     loadMore,
     createRestaurant,
     updateRestaurant,
+    deleteRestaurant,
     getRestaurantById,
     invalidateCache,
   }

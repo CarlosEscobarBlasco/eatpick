@@ -135,6 +135,11 @@
               <span v-if="saving" class="spinner-border spinner-border-sm me-2"></span>
               {{ saving ? 'Guardando...' : (editMode ? 'Guardar cambios' : 'Guardar restaurante') }}
             </button>
+            <button v-if="editMode" type="button" class="btn w-100 mt-2"
+                    style="background-color: #dc3545; color: #fff;"
+                    @click="handleDelete">
+              <i class="bi bi-trash me-1"></i> Eliminar restaurante
+            </button>
           </div>
         </form>
       </div>
@@ -146,7 +151,7 @@
 import { ref, onMounted, onBeforeUnmount, reactive } from 'vue'
 import Modal from 'bootstrap/js/dist/modal'
 
-const emit = defineEmits(['save'])
+const emit = defineEmits(['save', 'delete'])
 const modalEl = ref(null)
 let modalInstance = null
 
@@ -252,6 +257,12 @@ onMounted(() => {
 onBeforeUnmount(() => {
   modalInstance?.dispose()
 })
+
+function handleDelete() {
+  if (confirm(`¿Deseas eliminar el restaurante "${form.name}"?`)) {
+    emit('delete', { id: editingId, close })
+  }
+}
 
 defineExpose({ open, openForEdit, close })
 </script>
