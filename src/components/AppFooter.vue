@@ -8,7 +8,7 @@
         <div class="d-flex align-items-center gap-1 rounded-pill px-3 py-1"
              :style="activeIndex === 0 ? { backgroundColor: '#f0eeeb', color: '#FF5A5F' } : { color: '#a09d96' }">
           <i class="bi bi-shop" style="font-size: 1.1rem;"></i>
-          <span v-if="activeIndex === 0" style="font-size: 0.75rem; font-weight: 600;">Restaurantes</span>
+          <span style="font-size: 0.75rem; font-weight: 600;">Restaurantes</span>
         </div>
       </div>
       <div class="d-flex align-items-center justify-content-center flex-fill h-100"
@@ -18,7 +18,7 @@
         <div class="d-flex align-items-center gap-1 rounded-pill px-3 py-1"
              :style="activeIndex === 1 ? { backgroundColor: '#f0eeeb', color: '#FF5A5F' } : { color: '#a09d96' }">
           <i class="bi bi-search" style="font-size: 1.1rem;"></i>
-          <span v-if="activeIndex === 1" style="font-size: 0.75rem; font-weight: 600;">Buscar</span>
+          <span style="font-size: 0.75rem; font-weight: 600;">Buscar</span>
         </div>
       </div>
     </div>

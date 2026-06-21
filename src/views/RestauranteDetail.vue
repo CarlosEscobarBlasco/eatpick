@@ -47,6 +47,13 @@
               </template>
             </div>
           </div>
+
+          <a :href="`https://www.google.com/search?q=${encodeURIComponent(restaurant.name)}`"
+             target="_blank" rel="noopener noreferrer"
+             class="btn w-100 mt-3"
+             style="background-color: #FF5A5F; color: #fff;">
+            <i class="bi bi-google me-1"></i> Buscar en Google
+          </a>
         </div>
       </template>
     </div>

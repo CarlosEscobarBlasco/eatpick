@@ -32,7 +32,7 @@
             <input
               v-model="filters.nombre"
               type="text"
-              class="form-control form-control-sm"
+              class="form-control"
               placeholder="Buscar por nombre..."
             />
           </div>
@@ -40,17 +40,16 @@
           <div v-for="cat in filterCategories" :key="cat.key" class="mb-3">
             <label class="form-label fw-semibold small mb-1">{{ cat.label }}</label>
             <template v-if="cat.key !== 'price'">
-              <div class="input-group input-group-sm mb-1">
+              <div class="input-group mb-1">
                 <input
                   v-model="tagSearch[cat.key]"
                   type="text"
                   class="form-control"
                   placeholder="Filtrar etiquetas..."
-                  style="font-size: 0.75rem;"
                   @click.stop
                 />
                 <button v-if="tagSearch[cat.key]" class="btn btn-outline-secondary" type="button"
-                        style="font-size: 0.7rem; padding: 0 0.4rem; border-color: #e9e7e2;"
+                        style="border-color: #e9e7e2;"
                         @click.stop="tagSearch[cat.key] = ''">
                   <i class="bi bi-x"></i>
                 </button>
@@ -62,7 +61,8 @@
                       class="badge d-inline-flex align-items-center"
                       :style="{
                         cursor: 'pointer',
-                        fontSize: '0.8rem',
+                        fontSize: '0.9rem',
+                        padding: '0.4em 0.65em',
                         backgroundColor: filters.price.includes(p) ? '#FF5A5F' : '#e9e7e2',
                         color: filters.price.includes(p) ? '#fff' : '#5c5954',
                         transition: 'background-color 0.15s',
@@ -77,7 +77,8 @@
                         class="badge d-inline-flex align-items-center"
                         :style="{
                           cursor: 'pointer',
-                          fontSize: '0.8rem',
+                          fontSize: '0.9rem',
+                          padding: '0.4em 0.65em',
                           backgroundColor: selectedTagIds.has(tag.id) ? categoryColor(cat.key) : '#e9e7e2',
                           color: selectedTagIds.has(tag.id) ? '#fff' : '#5c5954',
                           transition: 'background-color 0.15s',
