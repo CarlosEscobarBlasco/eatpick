@@ -57,7 +57,7 @@
             </template>
             <div class="d-flex flex-nowrap gap-1 overflow-auto pb-1" style="scrollbar-width: thin;">
               <template v-if="cat.key === 'price'">
-                <span v-for="p in ['$', '$$', '$$$', '$$$$']" :key="p"
+                <span v-for="p in ['$', '$$', '$$$']" :key="p"
                       class="badge d-inline-flex align-items-center"
                       :style="{
                         cursor: 'pointer',
@@ -128,8 +128,7 @@
 
       <div v-else class="d-flex align-items-center justify-content-center" style="min-height: 300px;">
         <div class="text-center">
-          <i class="bi bi-arrow-up" style="color: #F5C25D; font-size: 2rem;"></i>
-          <h5 class="mt-3 text-muted">Expande los filtros y busca</h5>
+          <h5 class="mt-3 text-muted">Sin resultados</h5>
         </div>
       </div>
     </div>

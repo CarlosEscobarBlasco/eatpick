@@ -84,7 +84,7 @@ INSERT INTO tags (name, category) VALUES
   ('China', 'food_type'), ('Argentina', 'food_type'), ('Mariscos', 'food_type'),
   ('Vegetariana', 'food_type'), ('Pizza', 'food_type'), ('Hamburguesas', 'food_type'),
   ('Café', 'food_type'),
-  ('$', 'price'), ('$$', 'price'), ('$$$', 'price'), ('$$$$', 'price');
+  ('$', 'price'), ('$$', 'price'), ('$$$', 'price');
 
 -- Row Level Security
 ALTER TABLE restaurants ENABLE ROW LEVEL SECURITY;

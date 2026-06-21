@@ -1,7 +1,7 @@
 {
-  "name": "EatPick",
+  "name": "EatPick — Encuentra tu restaurante",
   "short_name": "EatPick",
-  "description": "",
+  "description": "Registra y descubre restaurantes con facilidad",
   "start_url": "/login",
   "display": "standalone",
   "background_color": "#FEFAF5",
@@ -9,7 +9,13 @@
   "icons": [
     {
       "src": "/logo.png",
-      "sizes": "689x690",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
     }

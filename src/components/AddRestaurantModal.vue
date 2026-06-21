@@ -92,7 +92,7 @@
             <div class="mb-3">
               <label class="form-label">Precio</label>
               <div class="d-flex flex-wrap gap-2">
-                <span v-for="p in ['$', '$$', '$$$', '$$$$']" :key="p"
+                <span v-for="p in ['$', '$$', '$$$']" :key="p"
                       class="badge d-inline-flex align-items-center"
                       :style="{
                         cursor: 'pointer',
