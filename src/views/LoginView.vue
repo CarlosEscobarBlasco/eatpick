@@ -4,7 +4,6 @@
       <div class="text-center mb-4">
         <i class="bi bi-shop text-primary" style="font-size: 2.5rem;"></i>
         <h1 class="h3 mt-2 fw-bold" style="color: #FF5A5F;">EatPick</h1>
-        <p class="text-muted">Encuentra tu próximo restaurante favorito</p>
       </div>
 
       <form @submit.prevent="handleLogin">

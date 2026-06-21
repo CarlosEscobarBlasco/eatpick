@@ -1,0 +1,17 @@
+{
+  "name": "EatPick",
+  "short_name": "EatPick",
+  "description": "",
+  "start_url": "/login",
+  "display": "standalone",
+  "background_color": "#FEFAF5",
+  "theme_color": "#FF5A5F",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "689x690",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
